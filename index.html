@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abhishekh | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursor-trail"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">ABK<span>.</span></div>
+    <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-btn" id="menuBtn">&#9776;</button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#hero" onclick="closeMobileMenu()">Home</a></li>
+      <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+      <li><a href="#skills" onclick="closeMobileMenu()">Skills</a></li>
+      <li><a href="#hobbies" onclick="closeMobileMenu()">Hobbies</a></li>
+      <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-text">ENGINEER</div>
+    <div class="hero-content">
+      <div class="hero-tag reveal">BTech Student · UPES Dehradun</div>
+      <h1 class="hero-title reveal">
+        <span class="line">ABHISHEKH</span>
+        <span class="line accent-line">KUMAR</span>
+      </h1>
+      <p class="hero-sub reveal">Building tomorrow's tech,<br/> one commit at a time.</p>
+      <div class="hero-cta reveal">
+        <a href="#about" class="btn-primary">Explore Me</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+    <div class="hero-badge">
+      <svg viewBox="0 0 100 100" class="badge-circle">
+        <defs><path id="circle" d="M 50,50 m -37,0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"/></defs>
+        <text font-size="11.5" fill="currentColor" font-family="Space Mono">
+          <textPath href="#circle">UPES DEHRADUN • 2ND YEAR BTECH •&nbsp;</textPath>
+        </text>
+      </svg>
+      <div class="badge-icon">⚡</div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about" id="about">
+    <div class="section-label">01 / About</div>
+    <div class="about-grid">
+      <div class="about-left reveal">
+        <div class="avatar-wrap">
+          <div class="avatar-ring"></div>
+          <div class="avatar-inner">
+            <span class="avatar-initials">ABK</span>
+          </div>
+          <div class="avatar-dot"></div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num" data-target="2">0</span>
+            <span class="stat-label">Years at UPES</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="10">0</span>
+            <span class="stat-label">Projects Done</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="5">0</span>
+            <span class="stat-label">Technologies</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-right reveal">
+        <h2 class="section-title">Hey, I'm <span>Abhishekh</span></h2>
+        <p class="about-body">
+          I'm a passionate <strong>2nd year B.Tech Engineering student</strong> at the University of Petroleum and Energy Studies (UPES), Dehradun, Uttarakhand. I thrive at the intersection of code and creativity.
+        </p>
+        <p class="about-body">
+          Whether it's architecting a web application or debugging at 2 AM, I bring relentless energy — the same kind I bring to the football field. I believe in learning by building, and building with purpose.
+        </p>
+        <div class="about-info">
+          <div class="info-pill">📍 Dehradun, Uttarakhand</div>
+          <div class="info-pill">🎓 UPES · B.Tech · 2nd Year</div>
+          <div class="info-pill">💻 Engineering Student</div>
+          <div class="info-pill">🟢 Open to Opportunities</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION (React) -->
+  <section class="skills" id="skills">
+    <div class="section-label">02 / Skills</div>
+    <h2 class="section-title centered reveal">My <span>Arsenal</span></h2>
+    <div id="skills-root"></div>
+  </section>
+
+  <!-- HOBBIES SECTION -->
+  <section class="hobbies" id="hobbies">
+    <div class="section-label">03 / Hobbies</div>
+    <h2 class="section-title centered reveal">Off The <span>Clock</span></h2>
+    <div class="hobbies-grid">
+      <div class="hobby-card reveal" id="football-card">
+        <div class="hobby-bg">⚽</div>
+        <div class="hobby-content">
+          <div class="hobby-icon">⚽</div>
+          <h3>Football</h3>
+          <p>I live for the beautiful game. Whether it's a casual match or a competitive one, the field is where I recharge. Football taught me teamwork, strategy, and never giving up.</p>
+          <div class="hobby-tags">
+            <span>Teamwork</span><span>Strategy</span><span>Passion</span>
+          </div>
+        </div>
+        <div class="hobby-glow football-glow"></div>
+      </div>
+      <div class="hobby-card reveal" id="music-card">
+        <div class="hobby-bg">🎵</div>
+        <div class="hobby-content">
+          <div class="hobby-icon">🎵</div>
+          <h3>Music</h3>
+          <p>Music is my headspace. From lo-fi beats while coding to high-energy tracks during workouts — music sets the tone for everything I do. It's my constant companion.</p>
+          <div class="hobby-tags">
+            <span>Lo-fi</span><span>Focus</span><span>Vibes</span>
+          </div>
+        </div>
+        <div class="hobby-glow music-glow"></div>
+      </div>
+    </div>
+    <!-- Music visualizer (JS) -->
+    <div class="visualizer-wrap reveal">
+      <p class="vis-label">Music Visualizer — Hover to Play</p>
+      <canvas id="visualizer" width="600" height="80"></canvas>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section class="contact" id="contact">
+    <div class="section-label">04 / Contact</div>
+    <div class="contact-inner reveal">
+      <h2 class="contact-heading">Let's <span>Connect</span></h2>
+      <p class="contact-sub">Open to internships, collaborations, and cool projects. Drop a message!</p>
+      <div class="contact-form-wrap">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" class="form-input" id="cName"/>
+          <input type="email" placeholder="Your Email" class="form-input" id="cEmail"/>
+        </div>
+        <textarea placeholder="Your Message..." class="form-input form-textarea" id="cMsg"></textarea>
+        <button class="btn-primary full-btn" onclick="sendMessage()">Send Message 🚀</button>
+        <div class="form-success" id="formSuccess">✅ Message sent! (Demo mode)</div>
+      </div>
+      <div class="social-links">
+        <a href="https://github.com/" target="_blank" class="social-btn">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank" class="social-btn">LinkedIn</a>
+        <a href="mailto:abhishekh@example.com" class="social-btn">Email</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">ABK<span>.</span></span>
+      <p>Designed & Built by <strong>Abhishekh</strong> · UPES Dehradun · 2026</p>
+      <span class="footer-heart">Made with ❤️ &amp; ☕</span>
+    </div>
+  </footer>
+
+  <!-- React Skills Component -->
+  <script type="text/babel">
+    const { useState } = React;
+
+    const skills = [
+      { name: "HTML5", level: 85, icon: "🌐", color: "#e34f26" },
+      { name: "CSS3", level: 80, icon: "🎨", color: "#1572b6" },
+      { name: "JavaScript", level: 75, icon: "⚡", color: "#f7df1e" },
+      { name: "React", level: 65, icon: "⚛️", color: "#61dafb" },
+      { name: "Python", level: 70, icon: "🐍", color: "#3776ab" },
+      { name: "C/C++", level: 72, icon: "💻", color: "#00599c" },
+      { name: "Git", level: 78, icon: "🔀", color: "#f05032" },
+      { name: "SQL", level: 60, icon: "🗃️", color: "#336791" },
+    ];
+
+    function SkillCard({ skill, index }) {
+      const [hovered, setHovered] = useState(false);
+      const [animated, setAnimated] = useState(false);
+
+      React.useEffect(() => {
+        const timer = setTimeout(() => setAnimated(true), index * 120 + 300);
+        return () => clearTimeout(timer);
+      }, [index]);
+
+      return (
+        <div
+          className={`skill-card ${animated ? "skill-card--in" : ""}`}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          style={{ "--accent": skill.color }}
+        >
+          <div className="skill-top">
+            <span className="skill-icon">{skill.icon}</span>
+            <span className="skill-name">{skill.name}</span>
+            <span className="skill-pct">{hovered ? skill.level + "%" : "—"}</span>
+          </div>
+          <div className="skill-bar-bg">
+            <div
+              className="skill-bar-fill"
+              style={{
+                width: animated ? skill.level + "%" : "0%",
+                background: skill.color,
+              }}
+            ></div>
+          </div>
+        </div>
+      );
+    }
+
+    function SkillsGrid() {
+      return (
+        <div className="skills-grid">
+          {skills.map((s, i) => (
+            <SkillCard key={s.name} skill={s} index={i} />
+          ))}
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("skills-root")).render(<SkillsGrid />);
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
